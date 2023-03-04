@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-function blog() {
+function AboutUs() {
     return (
-        <Layout title="Blog">
-            <p>blog text</p>
+        <Layout title="About us">
+            <p>sticker store</p>
         </Layout>
     );
 }
 
-export default blog;
+export default AboutUs;

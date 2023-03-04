@@ -1,10 +1,14 @@
 import * as React from "react"
+import Layout from "../components/Layout"
 
 const IndexPage = () => {
   return (
-    <div>
-      <h1>Welcom to Dev Stickers</h1>
-    </div>
+    <Layout title="Welcom to Dev Stickers">
+      <div>
+        <h1>Welcome!</h1>
+      </div>
+    </Layout>
+    
   )
 }
 
