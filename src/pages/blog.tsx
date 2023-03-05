@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-function blog() {
+
+export default function blog() {
     return (
         <Layout title="Blog">
             <p>blog text</p>
@@ -9,4 +10,6 @@ function blog() {
     );
 }
 
-export default blog;
+export function Head(){
+    return <title>Blog</title>
+}

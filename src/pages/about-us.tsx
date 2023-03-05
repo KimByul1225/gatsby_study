@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-function AboutUs() {
+export default function AboutUs() {
     return (
         <Layout title="About us">
             <p>sticker store</p>
@@ -9,4 +9,6 @@ function AboutUs() {
     );
 }
 
-export default AboutUs;
+export function Head(){
+    return <title>About Us</title>
+}

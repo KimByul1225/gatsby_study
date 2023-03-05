@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/Layout"
 
-const IndexPage = () => {
+export default function IndexPage() {
   return (
     <Layout title="Welcom to Dev Stickers">
       <div>
@@ -11,6 +11,8 @@ const IndexPage = () => {
     
   )
 }
+export function Head(){
+  return <title>Dev Stickers</title>
+}
 
-export default IndexPage
 
