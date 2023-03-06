@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 
 export default function blog() {
@@ -10,6 +11,9 @@ export default function blog() {
     );
 }
 
-export function Head(){
-    return <title>Blog</title>
-}
+export const Head = ()=> <Seo title="Blog"/>
+
+
+// export function Head(){
+//     return <title>Blog</title>
+// }

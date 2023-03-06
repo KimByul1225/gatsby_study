@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 export default function IndexPage() {
   return (
@@ -11,8 +12,11 @@ export default function IndexPage() {
     
   )
 }
-export function Head(){
-  return <title>Dev Stickers</title>
-}
+
+export const Head = ()=> <Seo title="Home"/>
+
+// export function Head(){
+//   return <title>Dev Stickers</title>
+// }
 
 
