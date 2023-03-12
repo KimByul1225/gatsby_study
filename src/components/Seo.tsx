@@ -5,19 +5,19 @@ interface ISeoProps {
 }
 
 export default function Seo({title}: ISeoProps) {
-    const data = useStaticQuery(graphql`
-        query SeoQuery {
+    const data = useStaticQuery<Queries.SeoDataQuery>(graphql`
+        query SeoData {
             site {
                 siteMetadata {
-                title
+                    title
                 }
             }
             # siteFunction
             # siteBuildMetadata
         }
     `);
-    console.log(data);
+    console.log(data.site?.siteMetadata?.title);
     return (
-        <title>{title} | DevStickers!</title>
+        <title>{title} | {data.site?.siteMetadata?.title}</title>
     )
 }
