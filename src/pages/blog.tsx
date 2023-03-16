@@ -4,27 +4,57 @@ import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
 
-export default function blog({data}: PageProps<Queries.BlogTitleQuery>) {
+export default function blog({data}: PageProps<Queries.BlogPostsQuery>) {
     console.log(data)
     return (
         <Layout title="Blog">
             <p>blog text</p>
-            <ul>
+            {/* <ul>
                 {data.allFile.nodes.map((file, index) => <li key={index}>{file.name}</li>)}
-            </ul>
+            </ul> */}
+            <section>
+                {
+                    data.allMdx.nodes.map((item, index)=>(
+                    <article key={index}>
+                        <h3>{item.frontmatter?.title}</h3>
+                        <h5>{item.frontmatter?.author} in : {item.frontmatter?.category}</h5>
+                        <h6>{item.frontmatter?.date}</h6>
+                        <hr />
+                        <p>{item.excerpt}</p>
+                    </article>
+                    ))
+                }
+            </section>
         </Layout>
     );
 }
 
-export const query = graphql`
-    query BlogTitle {
-    allFile {
+// 아래의 모든과정이 페이지의 빌드과정에서 실행됨!! 즉 로딩이 없음.
+export const query =graphql`
+    query BlogPosts {
+        allMdx {
             nodes {
-                name
+                frontmatter {
+                    title
+                    category
+                    date
+                    author
+                }
+                excerpt(pruneLength: 50)
             }
         }
     }
 `
+
+// export const query = graphql`
+//     query BlogTitle {
+//     allFile {
+//             nodes {
+//                 name
+//             }
+//         }
+//     }
+// `
 
 export const Head = ()=> <Seo title="Blog"/>
 
