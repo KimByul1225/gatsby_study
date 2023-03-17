@@ -1,7 +1,7 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 import React from 'react';
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import Layout from '../../components/Layout';
+import Seo from '../../components/Seo';
 
 
 export default function blog({data}: PageProps<Queries.BlogPostsQuery>) {
@@ -16,11 +16,13 @@ export default function blog({data}: PageProps<Queries.BlogPostsQuery>) {
                 {
                     data.allMdx.nodes.map((item, index)=>(
                     <article key={index}>
-                        <h3>{item.frontmatter?.title}</h3>
-                        <h5>{item.frontmatter?.author} in : {item.frontmatter?.category}</h5>
-                        <h6>{item.frontmatter?.date}</h6>
-                        <hr />
-                        <p>{item.excerpt}</p>
+                        <Link to={`/blog/${item.frontmatter?.slug}`}>
+                            <h3>{item.frontmatter?.title}</h3>
+                            <h5>{item.frontmatter?.author} in : {item.frontmatter?.category}</h5>
+                            <h6>{item.frontmatter?.date}</h6>
+                            <hr />
+                            <p>{item.excerpt}</p>
+                        </Link>
                     </article>
                     ))
                 }
@@ -37,8 +39,9 @@ export const query =graphql`
                 frontmatter {
                     title
                     category
-                    date
+                    date(formatString: "YYYY.MM.DD")
                     author
+                    slug
                 }
                 excerpt(pruneLength: 50)
             }
