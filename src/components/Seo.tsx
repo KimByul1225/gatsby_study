@@ -12,11 +12,9 @@ export default function Seo({title}: ISeoProps) {
                     title
                 }
             }
-            # siteFunction
-            # siteBuildMetadata
         }
     `);
-    console.log(data.site?.siteMetadata?.title);
+
     return (
         <title>{title} | {data.site?.siteMetadata?.title}</title>
     )

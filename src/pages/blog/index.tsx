@@ -32,7 +32,7 @@ export default function blog({data}: PageProps<Queries.BlogPostsQuery>) {
 }
 
 // 아래의 모든과정이 페이지의 빌드과정에서 실행됨!! 즉 로딩이 없음.
-export const query =graphql`
+export const query = graphql`
     query BlogPosts {
         allMdx {
             nodes {
