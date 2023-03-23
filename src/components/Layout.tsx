@@ -9,7 +9,7 @@ interface ILayoutProps{
 
 function Layout({children, title}: ILayoutProps) {
     return (
-        <div>
+        <div className="container">
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>

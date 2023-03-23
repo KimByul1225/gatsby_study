@@ -15,7 +15,7 @@ export default function blog({data}: PageProps<Queries.BlogPostsQuery>) {
             <section>
                 {
                     data.allMdx.nodes.map((item, index)=>(
-                    <article key={index}>
+                    <article key={index} className="grid">
                         <Link to={`/blog/${item.frontmatter?.slug}`}>
                             <h3>{item.frontmatter?.title}</h3>
                             <h5>{item.frontmatter?.author} in : {item.frontmatter?.category}</h5>
