@@ -4,6 +4,10 @@ interface ISeoProps {
     title : string
 }
 
+/**
+ * @description title을 위한 components
+ */
+
 export default function Seo({title}: ISeoProps) {
     const data = useStaticQuery<Queries.SeoDataQuery>(graphql`
         query SeoData {

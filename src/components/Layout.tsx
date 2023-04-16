@@ -7,6 +7,10 @@ interface ILayoutProps{
     title: string;
 }
 
+/**
+ * @description layout components nav와 footer를 포함하고 있음
+ */
+
 function Layout({children, title}: ILayoutProps) {
     return (
         <div className="container">
