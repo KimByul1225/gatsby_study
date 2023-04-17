@@ -2,6 +2,10 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
+/**
+ * @description AboutUs메뉴 페이지를 위한 components
+ */
+
 export default function AboutUs() {
     return (
         <Layout title="About us">
