@@ -3,12 +3,15 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import Seo from '../../components/Seo';
 
+/**
+ * @description blog 리스트를 보여주기 위한 components
+ */
 
 export default function blog({data}: PageProps<Queries.BlogPostsQuery>) {
     console.log(data)
     return (
         <Layout title="Blog">
-            <p>blog text</p>
+            {/* <p>blog text</p> */}
             {/* <ul>
                 {data.allFile.nodes.map((file, index) => <li key={index}>{file.name}</li>)}
             </ul> */}

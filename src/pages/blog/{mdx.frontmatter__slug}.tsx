@@ -9,6 +9,10 @@ interface IBlogPostProps {
     children: any
 }
 
+/**
+ * @description blog 상세 내용을 보여주기 위한 components
+ */
+
 export default function BlogPost({data, children}: IBlogPostProps) {
     console.log(data);
     console.log(children);

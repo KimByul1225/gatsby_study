@@ -3,6 +3,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../../components/Layout";
 
+/**
+ * @description Products의 상세 내용을 보여주기 위한 components
+ */
+
 export default function ProductDetail({data}: PageProps<Queries.ProductQuery>) {
     const image = getImage(data.contentfulProduct?.preview?.gatsbyImageData!);
     return (
