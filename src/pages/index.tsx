@@ -7,11 +7,11 @@ import { graphql, PageProps, Link } from "gatsby"
 export default function IndexPage({ data }:PageProps<Queries.ProductsQuery>) {
   return (
     <Layout title="Welcom to Dev Stickers">
-      <div>
+      {/* <div>
         <h1>Welcome!</h1>
         <StaticImage src="https://images.unsplash.com/photo-1625768376503-68d2495d78c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80" alt="Stickers"
         />
-      </div>
+      </div> */}
       <div>
         {
           data.allContentfulProduct.nodes.map((item, index) => {
@@ -34,7 +34,6 @@ export default function IndexPage({ data }:PageProps<Queries.ProductsQuery>) {
         }
       </div>
     </Layout>
-    
   )
 }
 export const query = graphql`

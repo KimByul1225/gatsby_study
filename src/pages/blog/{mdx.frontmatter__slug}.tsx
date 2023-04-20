@@ -16,7 +16,11 @@ interface IBlogPostProps {
 export default function BlogPost({data, children}: IBlogPostProps) {
     console.log(data);
     console.log(children);
+
     const image = getImage(data.mdx?.frontmatter?.headerImage?.childImageSharp?.gatsbyImageData!);
+    // getImage function사용해서 이미지를 가지고 옴.
+
+
     return (
         <Layout 
             title=""
@@ -32,21 +36,21 @@ export default function BlogPost({data, children}: IBlogPostProps) {
 
 export const query = graphql`
     query PostDetail($frontmatter__slug: String) {
-    mdx(frontmatter: {slug: {eq: $frontmatter__slug}}) {
-        body
-        frontmatter {
-            author
-            category
-            date
-            slug
-            title
-            headerImage {
-                childImageSharp {
-                    gatsbyImageData(height: 450, placeholder: BLURRED)
+        mdx(frontmatter: {slug: {eq: $frontmatter__slug}}) {
+            body
+            frontmatter {
+                author
+                category
+                date
+                slug
+                title
+                headerImage {
+                    childImageSharp {
+                        gatsbyImageData(height: 450, placeholder: BLURRED)
+                    }
                 }
             }
         }
-    }
     }
 
 `

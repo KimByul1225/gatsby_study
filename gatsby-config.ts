@@ -1,4 +1,6 @@
 require("dotenv").config();
+// .env를 불러오기 위해 사용
+
 import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
