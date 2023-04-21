@@ -21,9 +21,9 @@ export default function ProductDetail({data}: PageProps<Queries.ProductQuery>) {
         </Layout>
     )
 }
-
 export const query = graphql`
     query Product($id: String!) {
+        # 해당 문법에 대한 추후 스터디 필요.
         contentfulProduct(id: {eq: $id}) {
             id
             name
@@ -33,7 +33,3 @@ export const query = graphql`
             }
         }
     }`
-
-// {contentfulProduct.id}
-
-// "b3d009aa-a6d1-5064-9a60-d8291dbf1a94"
